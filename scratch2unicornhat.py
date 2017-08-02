@@ -79,6 +79,5 @@ def main():
             s.broadcast("uhat_show")
             s.broadcast("uhat_clear")
             listen(s)
-            time.sleep(5)
 
 main()
