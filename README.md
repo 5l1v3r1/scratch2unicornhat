@@ -24,7 +24,9 @@ mv scratch2unicornhat-master scratch2unicornhat
 
 ## Hot to run
 
-On Scratch, open any sample project from scratch2unicornhat/samples folder.
+### Scratch 1.4
+
+On Scratch 1.4, open any sample project from scratch2unicornhat/samples folder.
 
 From terminal:
 
@@ -34,3 +36,22 @@ python scratch2unicornhat.py
 ```
 
 Now you can play the sample project on Scratch.
+
+### Scratch 2
+
+From terminal:
+
+```
+cd scratch2unicornhat
+python scratchx2unicornhat.py
+```
+
+On Scratch 2, select [File] from menu holding Shift key, and select [Import experimental extension].
+
+Input http://localhost:8080/scratchx2unicornhat.js in URL text field, and click Load button.
+
+In [More Blocks], Unicorn HAT blocks becomes available.
+
+## TODO
+
+- Translate Unicorn HAT blocks to English.
