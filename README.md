@@ -50,7 +50,7 @@ On Scratch 2, select [File] from menu holding Shift key, and select [Import expe
 
 Input http://localhost:8080/scratchx2unicornhat.js in URL text field, and click Load button.
 
-In [More Blocks], Unicorn HAT blocks becomes available.
+In [More Blocks], Unicorn HAT blocks become available.
 
 ## TODO
 
