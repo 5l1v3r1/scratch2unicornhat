@@ -45,6 +45,16 @@
         });
     };
 
+    ext.convert = function(code) {
+        $.post(serverUrl + "/convert", {
+          code: code
+        }, function() {
+            console.log("convert succeeded");
+        }).fail(function() {
+            console.log("convert failed!");
+        });
+    };
+
     ext.show = function() {
         $.get(serverUrl + "/show", function() {
             console.log("show succeeded");
@@ -79,8 +89,9 @@
         blocks: [
             [" ", "x:%n y:%n のLEDを r:%n g:%n b:%n の色で表示する", "addPixel", 0, 0, 255, 255, 255],
             [" ", "x: %m.coords y: %m.coords のLEDを %m.colors で表示する", "addPixelSimple", 0, 0, "白(255, 255, 255)"],
-            [" ", "x:%n y:%n のLEDを %m.colors で表示する", "addPixelSimple", 0, 0, "白"],
+            [" ", "x:%n y:%n のLEDを %m.colors で表示する", "addPixelSimple", 0, 0, "白(255, 255, 255)"],
             [" ", "x:%n y:%n のLEDを r:%n g:%n b:%n の色にする", "setPixel", 0, 0, 255, 255, 255],
+            [" ", "SIDAコードから変換する %s", "convert", ""],
             [" ", "表示する", "show"],
             [" ", "クリアする", "clear"],
             [" ", "全部消す", "allClear"],
