@@ -20,8 +20,6 @@ log = logging.getLogger(__name__)
 
 class ScratchX2UnicornhatServer(BaseHTTPRequestHandler):
     def addPixel(self, params):
-        print "params[0]:"
-        print params[0]
         x = self.inRange(int(params[0]), 0, 15)
         y = self.inRange(int(params[1]), 0, 15)
         r = self.inRange(int(params[2]), 0, 255)
@@ -29,6 +27,23 @@ class ScratchX2UnicornhatServer(BaseHTTPRequestHandler):
         b = self.inRange(int(params[4]), 0, 255)
         unicornhathd.set_pixel(x, y, r, g, b)
         unicornhathd.show()
+        return ''
+
+    def setPixel(self, params):
+        x = self.inRange(int(params[0]), 0, 15)
+        y = self.inRange(int(params[1]), 0, 15)
+        r = self.inRange(int(params[2]), 0, 255)
+        g = self.inRange(int(params[3]), 0, 255)
+        b = self.inRange(int(params[4]), 0, 255)
+        unicornhathd.set_pixel(x, y, r, g, b)
+        return ''
+
+    def show(self, params):
+        unicornhathd.show()
+        return ''
+
+    def clear(self, params):
+        unicornhathd.clear()
         return ''
 
     def allClear(self, params):
@@ -53,9 +68,13 @@ class ScratchX2UnicornhatServer(BaseHTTPRequestHandler):
     def do_GET(self):
         global mc
         commands = {
+            "set_pixel" : self.setPixel,
+            "show" : self.show,
+            "clear" : self.clear,
             "all_clear" : self.allClear,
             "add_pixel" : self.addPixel,
-            "scratchx2unicornhat.js" : self.returnExtension
+            "scratchx2unicornhat.js" : self.returnExtension,
+            "s2u.js" : self.returnExtension
         }
         parsed_path = urlparse.urlparse(self.path)
         query = parsed_path.query
