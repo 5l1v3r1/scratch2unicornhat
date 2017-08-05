@@ -85,16 +85,40 @@
 
     ext._shutdown = function() {};
 
+    var lang = ((navigator.language || navigator.userLanguage) == 'ja') ? 'ja' : 'en';
+    var locale = {
+        ja: {
+            addPixel: "x:%n y:%n のLEDを r:%n g:%n b:%n の色で表示する",
+            addPixelSimplest: "x: %m.coords y: %m.coords のLEDを %m.colors で表示する",
+            addPixelSimpler: "x:%n y:%n のLEDを %m.colors で表示する",
+            setPixel: "x:%n y:%n のLEDを r:%n g:%n b:%n の色にする",
+            convert: "SIDAコードから変換する %s",
+            show: "表示する",
+            clear: "クリアする",
+            allClear: "全部消す"
+        },
+        en: {
+            addPixel: "set and show a pixel of x:%n y:%n to r:%n g:%n b:%n color",
+            addPixelSimplest: "set and show a pixel of x: %m.coords y: %m.coords to %m.colors",
+            addPixelSimpler: "set and show a pixel of x:%n y:%n to %m.colors",
+            setPixel: "set a pixel of x:%n y:%n to r:%n g:%n b:%n color",
+            convert: "import SIDA code: %s",
+            show: "update",
+            clear: "clear buffer",
+            allClear: "all clear"
+        }
+    }
+
     var descriptor = {
         blocks: [
-            [" ", "x:%n y:%n のLEDを r:%n g:%n b:%n の色で表示する", "addPixel", 0, 0, 255, 255, 255],
-            [" ", "x: %m.coords y: %m.coords のLEDを %m.colors で表示する", "addPixelSimple", 0, 0, "白(255, 255, 255)"],
-            [" ", "x:%n y:%n のLEDを %m.colors で表示する", "addPixelSimple", 0, 0, "白(255, 255, 255)"],
-            [" ", "x:%n y:%n のLEDを r:%n g:%n b:%n の色にする", "setPixel", 0, 0, 255, 255, 255],
-            [" ", "SIDAコードから変換する %s", "convert", ""],
-            [" ", "表示する", "show"],
-            [" ", "クリアする", "clear"],
-            [" ", "全部消す", "allClear"],
+            [" ", locale[lang].addPixel, "addPixel", 0, 0, 255, 255, 255],
+            [" ", locale[lang].addPixelSimplest, "addPixelSimple", 0, 0, "白(255, 255, 255)"],
+            [" ", locale[lang].addPixelSimpler, "addPixelSimple", 0, 0, "白(255, 255, 255)"],
+            [" ", locale[lang].setPixel, "setPixel", 0, 0, 255, 255, 255],
+            [" ", locale[lang].convert, "convert", " "],
+            [" ", locale[lang].show, "show"],
+            [" ", locale[lang].clear, "clear"],
+            [" ", locale[lang].allClear, "allClear"]
         ],
         menus: {
             colors: Object.keys(COLORS),
