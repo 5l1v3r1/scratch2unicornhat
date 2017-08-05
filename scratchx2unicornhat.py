@@ -64,7 +64,6 @@ class ScratchX2UnicornhatServer(BaseHTTPRequestHandler):
         colorArray = code.split("#")[3]
         colorArrayValue = colorArray.split("=")[1]
         colors = colorArrayValue.split(" ")
-
         i = 0
         y = 0
         while y < 16:
@@ -75,8 +74,6 @@ class ScratchX2UnicornhatServer(BaseHTTPRequestHandler):
                 g = int(color[2:4], 16)
                 b = int(color[4:6], 16)
                 unicornhathd.set_pixel(x, y, r, g, b)
-                print "x:%d y:%d r:%s g:%s b:%s" % (x, y, int(r, 16), int(g, 16), int(b, 16))
-
                 x -= 1
                 i += 1
             y += 1
