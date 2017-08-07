@@ -1,10 +1,10 @@
 # Scratch2unicornhat
 
-With Scratch2unicornhat, you can create Scratch projects that show LED patterns on Pimoroni Unicorn HAT.
+With Scratch2unicornhat, you can create Scratch projects that show LED patterns on Pimoroni Unicorn HAT HD.
 
 Demo on YouTube: https://www.youtube.com/watch?v=GBLkATSC31A
 
-About Pimoroni Unicorn HAT: https://github.com/pimoroni/unicorn-hat
+About Pimoroni Unicorn HAT HD: https://github.com/pimoroni/unicorn-hat-hd
 
 ## How to install
 
