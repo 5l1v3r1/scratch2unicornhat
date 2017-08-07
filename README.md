@@ -11,7 +11,7 @@ About Pimoroni Unicorn HAT: https://github.com/pimoroni/unicorn-hat
 If you have not, you need to install Python libraries for Unicorn HAT.
 
 ```
-curl -sS https://get.pimoroni.com/unicornhat | bash
+curl https://get.pimoroni.com/unicornhathd | bash
 ```
 
 Download Scratch2unicornhat.
