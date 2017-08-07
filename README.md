@@ -52,6 +52,9 @@ Input http://localhost:8080/scratchx2unicornhat.js in URL text field, and click 
 
 In [More Blocks], Unicorn HAT blocks become available.
 
-## TODO
+#### Importing data
 
-- Translate Unicorn HAT blocks to English.
+You can import data in SIDA(cratch Image Data Array) format which is supported by DotPaint RGB 2 (https://scratch.mit.edu/projects/104114090/).
+
+Import demo on YouTube: 
+https://www.youtube.com/watch?v=33wWywQMOHM
